@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tempi TRAMsformaMi</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: #f4f4f4;
+  }
+
+  .container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+
+  img {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  input, button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  input {
+    border: 1px solid #ccc;
+  }
+
+  button {
+    border: none;
+    background: #0078d7;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #005fa3;
+  }
+
+  .error {
+    color: red;
+    margin-top: 10px;
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="/assets/img/logo.png" alt="TRAMsformaMi logo">
+    <h1>Benvenuto su Tempi TRAMsformaMi</h1>
+
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Invio</button>
+
+    <div class="error" id="error">Password errata</div>
+  </div>
+
+<script>
+function checkPassword() {
+  const pwd = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  if (pwd === "1234") {
+    // cambia qui la pagina di destinazione
+    window.location.href = "app/main.php";
+  } else {
+    error.style.display = "block";
+  }
+}
+</script>
+</body>
+</html>
